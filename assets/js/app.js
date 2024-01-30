@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             function displayProducts(products) {
                 let productContainer = document.getElementById('productContainer');
                 productContainer.innerHTML = '';
-
+            
                 products.forEach(product => {
-                    productContainer.innerHTML += `
+                    let productCard = `
                         <div class="col-lg-3 col-md-6 mb-4">
                             <div class="card shadow h-100">
                                 <img src="${product.image}" class="card-img-top" alt="${product.title}">
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             </div>
                         </div>
                     `;
+                    productContainer.insertAdjacentHTML('beforeend', productCard); // Я заменил InnerHtml на AdjacentHTML так будет лучше
                 });
             }
 
